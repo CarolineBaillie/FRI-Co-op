@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Events
+{% endblock %}
+
+{% block style %}
+<style>
+    h1.profile-name {
+        font-size: 30px;
+    }
+
+    h3.profile-name {
+        font-size: 23px;
+    }
+
+    .parent {
+        text-align: left;
+        line-height: 2;
+    }
+
+    hr {
+        border-top: 1px solid black;
+        margin-left: 150px;
+        margin-right: -50px;
+    }
+
+    .sub,
+    .ans {
+        display: inline;
+    }
+
+    .editProfile,
+    #logOut,
+    button.back,
+    #partnerUp {
+        height: 30px;
+        width: 100px;
+        margin-top: 15px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: white;
+        color: gray;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .editProfile:hover,
+    #logOut:hover,
+    button.back:hover,
+    #partnerUp:hover {
+        transform: scale(1.1);
+    }
+
+    #profilePart {
+        display: flex;
+    }
+
+    #nameEtc {
+        height: 500px;
+    }
+
+    h4.sub {
+        font-size: 17px;
+        width: 55%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    p.ans {
+        font-size: 15px;
+        width: 55%;
+        font-weight: 300;
+
+
+    }
+    .section {
+        margin-bottom: 15px;
+    }
+
+    .edit {
+        margin-left: 20px;
+    }
+    .text{
+        display:inline;
+        padding-right:40px;
+    }
+    .cut-off{
+        max-width: 90%;
+    }
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/eventsPage5.jpg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+    .profile-page{
+        background-color: white;
+        border-radius: 25px;
+        width:50%;
+        padding:20px;
+        height:175%;
+        margin-left:25%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br>
+<br>
+<div class="profile-page">
+    <div class="parent">
+        <form action="/events" style="display: inline;font-size:larger;">
+            <button class="back" type="submit">
+                &#8592 Back</button>
+        </form>
+        <br>
+        <br>
+        <div id="profilePart">
+            <div id="nameEtc">
+                <div>
+                    <h1 class="card-title">{{ row["eventName"] }}</h1>
+                    
+                </div>
+                <div class="cut-off">
+                    <h5 class="sub green">What:</h5>
+                    <p class="ans"> {{ row["description"] }}</p>
+                </div>
+                <br>
+                <h5 class="sub blue">When:</h5><br>
+                <div style="padding-left: 30px;">
+                    <h6 class="sub">Date:</h6>
+                    <p class="ans"> {{ row["date"] }}</p>
+                    <br><br>
+                    <h6 class="sub">Time:</h6>
+                    <p class="ans"> {{ row["time"] }}</p>
+                </div>
+                <br>
+                <div>
+                    <h5 class="sub purple">Where:</h5>
+                    <p class="ans"> {{ row["location"] }}</p>
+                </div>
+                <br>
+                <div>
+                    <h5 class="sub pink">Additional Information:</h5>
+                    <p class="ans"> {{ row["info"] }}</p>
+                </div>
+                <br>
+                <div>
+                    <h5 class="sub red">To learn more contact:</h5>
+                    <p class="ans"> {{ row["contact"] }}</p>
+                </div>
+                <br>
+                <div>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="{{row['eventName']}}">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                    {% if session.user_id == row["id"] %}
+                    <form action="/removeEvents" method="post" class="text">
+                        <input type="hidden" name="desc" value="{{row['description']}}">
+                        <input class="second btn btn-primary" id="partnerUp" type="submit" name="button" value="Remove Event">
+                    </form>
+                    <br><br><br><br>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

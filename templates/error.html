@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/registered2.png");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .text {
+        text-align: center;
+        width: 40%;
+        background-color: white;
+        color:red;
+        border-radius: 25px;
+        margin-left: 30%;
+        padding: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <br><br><br><br>
+    <div class="text">
+        <br>
+        <h1><b>Error</b></h1>
+        <br>
+        <h3>{{message}}</h3>
+        <br>
+        <form action="{{page}}">
+            <input class="first btn btn-primary" type="submit" name="button" value="Return to Previous Page">
+        </form>
+        <br>
+    </div>
+{% endblock %}

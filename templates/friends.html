@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Friends
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/friends.jpeg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+    .partnerHeader{
+        background-color: lightsalmon;
+        width:30%;
+        margin-left:35%;
+        border-radius: 25px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<link href="/static/friends.css" rel="stylesheet">
+<h1 class="partnerHeader">Here Are Your Friends</h1>
+<div class="row">
+    {% for friend in friends %}
+    <div class="browse-friends">
+        <div class="mb-4 back">
+            <div class="card-body" style="overflow: hidden; max-height: 270px;">
+                <h4 class="card-title"><h1>{{ friend["username"] }}</h1></h4>
+                <h5 class="card-title"><h3>{{ friend["name"] }}</h3></h5>
+                <br>
+                <h6 class="card-text des blue">Bio:</h6>
+                <p> {{ friend["bio"] }}</p>
+                <h6 class="card-text des purple">Age:</h6>
+                <p> {{ friend["age"] }}</p>
+                <h6 class="card-text des pink">Location:</h6>
+                <p> {{ friend["location"] }}</p>
+                <h6 class="card-text des red">Phone #:</h6>
+                <p> {{ friend["phone"] }}</p>
+                <form action="/profile" method="post">
+                    <input type="hidden" name="person_id" value="{{friend['id']}}">
+                    <input class="first btn btn-primary" type="submit" name="button" value="Visit Profile">
+                </form>
+                <form action="/remove" method="post">
+                    <input type="hidden" name="person_id_remove" value="{{friend['id']}}">
+                    <input class="second btn btn-primary" type="submit" name="button" value="Remove">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Story Wall
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/wall.jpeg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+    .heading {
+        text-align: center;
+        color: #EFF0F0;
+    }
+    .masonry { /* Masonry container */
+        column-count: 3;
+        column-gap: 320px;
+        padding:20px;
+        margin-left:12%;
+    }
+
+    .brick { /* Masonry bricks or child elements */
+        background-color: #CEF3E6;
+        display: inline-block;
+        margin: 0 0 10px 1em;
+        width: 250%;
+        border-radius: 10px;
+        text-align:center;
+        padding:10px;
+    }
+    .butn{
+        text-align:center;
+    }
+    .btn{
+        width:20%;
+        text-align:center;
+        border-color: black;
+        background-color:#F1ECEB
+    }
+    .btn:hover{
+        background-color:#DAD4D3
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <br><br>
+    <link rel="stylesheet" href="files/css/labs.css">
+    <link rel="stylesheet" href="files/css/masonry.css">
+
+    <div>
+        <div class="heading">
+            <h1>Story Board:</h1>
+            <h2>Share your story...</h2>
+            <br>
+            <form action="/storyWallPost" class="butn">
+                <input class="btn" type="submit" name="button" value="Post a story">
+            </form>
+        </div>
+        <br><br>
+        <div class="masonry">
+            {% for story in stories %}
+            <div class="brick">
+                <br>
+                <p>{{story["story"]}}</p>
+                <footer class="blockquote-footer">
+                    <small class="text-muted">
+                        {{story["username"]}}
+                    </small>
+                </footer>
+                <br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

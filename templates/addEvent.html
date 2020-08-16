@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/eventsAdd.jpeg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<link href="/static/sign_.css" rel="stylesheet">
+<br>
+<br>
+<h1 style="text-align:center; margin-left:-100px;">Post a Project!</h1>
+<br>
+<br>
+<form class="project-post" action="/addEvent" method="post">
+    <label>Event Name:</label><br>
+    <div class="input">
+        <input name="name" class="reg" placeholder="Racial Injustice Walk" type="text">
+    </div>
+    <label>Description:</label><br>
+    <div class="input">
+        <textarea class="reg" rows="5" cols="60" name="desc" style="text-align: left;"
+            placeholder="People from all ages, races, and backgrounds are invited to join us in leaving schools, jobs, or homes to walk with us through Central park protesting the racial injustice that exists in not only New York, but the world" type="text"></textarea>
+    </div>
+    <label>Date:</label><br>
+    <div class="input">
+        <input name="date" class="reg" placeholder="Tuesday October 13th 2020" type="text" maxlength="50">
+    </div>
+    <label>Time:</label><br>
+    <div class="input">
+        <input name="time" class="reg" placeholder="12pm-4pm" type="text" maxlength="50">
+    </div>
+    <label>Location:</label><br>
+    <div class="input">
+        <input name="location" class="reg" placeholder="Central Park, New York City (65th street enterance)" type="text">
+    </div>
+    <label>Contact:</label><br>
+    <div class="input">
+        <input name="contact" class="reg" placeholder="racialStrikes@gmail.com" type="text" maxlength="50">
+    </div>
+    <label>Additional Info:</label><br>
+    <div class="input">
+        <textarea class="reg" rows="5" cols="60" name="info" style="text-align: left;"
+            placeholder="Feel free to bring signs!" type="text"></textarea>
+    <br>
+    <div class="input">
+        <button class="subButton but" type="submit">Post event</button>
+    </div>
+    <br>
+</form>
+
+{% endblock %}

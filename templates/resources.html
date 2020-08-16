@@ -1,0 +1,357 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Resources
+{% endblock %}
+
+{% block style %}
+    <style>
+        h1{
+            text-align:center;
+        }
+        .h3 {
+            margin-left: 10%;
+        }
+
+        * {
+        box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            /* The image used */
+            background-image: url("/static/resources.jpeg");
+
+            /* Full height */
+            height: 100%;
+            margin: 0;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            width: 45%;
+            padding: 0 10px;
+            padding-right:50px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            margin: 0 -5px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 800px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        img{
+            width:200px;
+            height:300px;
+        }
+        td{
+            padding-right:20px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1><u>Resources:</u></h1>
+    <br>
+    <h3 class="h3">Other Organizations:</h3>
+    <br><br>
+    <div style="margin-left:10%;">
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Color of Change</h3>
+                    <p>The country’s largest online racial justice organization, Color of Change is a long-time Ben &
+                        Jerry’s partner that
+                        mobilizes its 1.4 million members to knock down the walls that hold Black people back.</p>
+                    <form action="https://colorofchange.org/" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="column">
+                <div class="card h-100">
+                    <h3>NAACP</h3>
+                    <p>The NAACP has been on the front lines of the struggle for racial justice since 1909. The nation’s
+                        largest civil rights
+                        organization, the NAACP is dedicated to securing progress for communities of color and all
+                        Americans.</p>
+                    <form action="https://www.naacp.org/" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>The National Coalition on Black Civic Participation</h3>
+                    <p>Founded in 1976, the National Coalition on Black Civic Participation is dedicated to increasing civic
+                        engagement and
+                        voter participation in Black and underserved communities.</p>
+                    <form action="https://www.ncbcp.org/" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Black Lives Matter</h3>
+                    <p>Black Lives Matter is a dynamic, chapter-based, international organization whose goal is to create a
+                        world where
+                        violence is no longer inflicted on Black people.</p>
+                    <form action="https://blacklivesmatter.com/" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <h3 class="h3">Books:</h3>
+    <br><br>
+    <div style="margin-left:10%;">
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/static/race2.jpeg" alt="...">
+                            </td>
+                            <td style="text-align:left;">
+                                <h3>The New Jim Crow: Mass Incarceration in the Age of Colorblindness</h3>
+                                <p><i>By Michelle Alexander</i></p>
+                                <p>The book discusses race-related issues specific to African-American males and mass incarceration in the United
+                                    States,
+                                    but Alexander noted that the discrimination faced by African-American males is prevalent among other minorities and
+                                    socio-economically disadvantaged populations.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <form action="https://www.hoopladigital.com/title/12676199" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card h-100">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/static/race3.jpeg" alt="...">
+                            </td>
+                            <td style="text-align:left;">
+                                <h3>I'm Still Here: Black Dignity in a World Made for Whiteness</h3>
+                                <p><i>By Austin Channing Brown</i></p>
+                                <p>I'm Still Here, Austin Brown's debut, is an eye-opening book about how some people in the United States still
+                                    struggle
+                                    for acceptance. Brown's book shows her own journey to find self-worth amongst gilded diversity mission statements in
+                                    various organizations for both her gender and her skin color.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <form action="https://mvlc.overdrive.com/media/3650463" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/static/race4.jpeg" alt="...">
+                            </td>
+                            <td style="text-align:left;">
+                                <h3>White Fragility</h3>
+                                <p><i>By Robin DiAngelo and Michael Eric Dyson</i></p>
+                                <p>Groundbreaking book exploring the counterproductive reactions white people have when discussing racism that serve to
+                                    protect their positions and maintain racial inequality.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <form action="https://mvlc.overdrive.com/media/3716950" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card h-100">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/static/race5.jpeg" alt="...">
+                            </td>
+                            <td style="text-align:left;">
+                                <h3>Tears We Cannot Stop: A Sermon to White America</h3>
+                                <p><i>By Michael Eric Dyson</i></p>
+                                <p>A call for change in the United States argues that racial progress can only be achieved after facing difficult
+                                    truths,
+                                    including being honest about how black grievance has been ignored, dismissed, and discounted.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <form action="https://mvlc.overdrive.com/media/2931727" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/static/race6.jpeg" alt="...">
+                            </td>
+                            <td style="text-align:left;">
+                                <h3>When They Call You A Terrorist</h3>
+                                <p><i>By Patrisse Khan-Cullors, Asha Bandele</i></p>
+                                <p>A lyrical memoir by the co-founder of the Black Lives Matter movement urges readers to understand the movement's
+                                    position of love, humanity and justice, challenging perspectives that have negatively labeled the movement's
+                                    activists
+                                    while calling for essential political changes.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <form action="https://www.hoopladigital.com/title/12032986" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card h-100">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="/static/race1.jpeg" alt="...">
+                            </td>
+                            <td style="text-align:left;">
+                                <h3>So You Want To Talk About Race</h3>
+                                <p><i>By Ijeoma Oluo</i></p>
+                                <p>A Seattle-based writer, editor and speaker tackles the sensitive, hyper-charged racial landscape in current America,
+                                    discussing the issues of privilege, police brutality, intersectionality, micro-aggressions, the Black Lives Matter
+                                    movement, and the "N" word.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <form action="https://www.hoopladigital.com/title/12376341" target="_blank">
+                        <button type="submit">Go to Site</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <h3 class="h3">Articles:</h3>
+    <br><br>
+    <div style="margin-left:10%;">
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Nonviolence and Racial Justice</h3>
+                    <p><i>By King, Martin Luther, Jr.</i></p>
+                    <form action="https://kinginstitute.stanford.edu/king-papers/documents/nonviolence-and-racial-justice" target="_blank">
+                        <button type="submit">Read Article</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Moving Beyond Diversity Toward Racial Equity</h3>
+                    <p><i>By Ben Hecht</i></p>
+                    <form action="https://hbr.org/2020/06/moving-beyond-diversity-toward-racial-equity"
+                        target="_blank">
+                        <button type="submit">Read Article</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Unequal Opportunity: Race and Education</h3>
+                    <p><i>By Linda Darling-Hammond</i></p>
+                    <form action="https://www.brookings.edu/articles/unequal-opportunity-race-and-education/"
+                        target="_blank">
+                        <button type="submit">Read Article</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Breaking Through Barriers to Racial Equity</h3>
+                    <p><i>By Stanford Social Innovation Review.</i></p>
+                    <form action="https://ssir.org/supplement/blog_series#"
+                        target="_blank">
+                        <button type="submit">Read Article</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>On Racial Justice, Statements Are Not Enough</h3>
+                    <p><i>Fernando Tormos-Aponte</i></p>
+                    <form action="https://www.scientificamerican.com/article/on-racial-justice-statements-are-not-enough/"
+                        target="_blank">
+                        <button type="submit">Read Article</button>
+                    </form>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card h-100">
+                    <h3>6 Steps to Building a Better Workplace for Black Employees</h3>
+                    <p><i>By Dina Gerdeman</i></p>
+                    <form action="https://hbswk.hbs.edu/item/6-steps-to-building-a-better-workplace-for-black-employees"
+                        target="_blank">
+                        <button type="submit">Read Article</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+{% endblock %}

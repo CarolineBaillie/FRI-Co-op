@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+
+{% block body %}
+<link href="/static/sign_.css" rel="stylesheet">
+<br>
+<br>
+<h1 class="profile-info">Edit your profile</h1>
+<br>
+<form action="/updateProf" method="post">
+    <label>Your Name:</label>
+    <div class="input">
+        <br>
+        <input class="reg" rows="5" cols="60" name="name" style="text-align: left;" type="name" value="{{row['name']}}">
+    </div>
+    <br>
+    <label>Summary/bio:</label>
+    <div class="input">
+        <br>
+        <textarea class="reg" rows="5" cols="60" name="bio" style="text-align: left;"
+            type="text">{{row['bio']}}</textarea>
+    </div>
+    <br>
+    <label>Race:</label><br>
+    <div class="sel">
+        <select id="race" name="race">
+            <option value="black">Black/African American</option>
+            <option value="asian">Asian</option>
+            <option value="native">American Indian/Alaska Native</option>
+            <option value="hispanic">Hispanic or Latinx</option>
+            <option value="pacific">Native Hawaiian/other Pacific Islander</option>
+            <option value="multiracial">Multiracial</option>
+            <option value="white">White</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <br>
+    <label>Your age:</label><br>
+    <div class="input">
+        <input class="reg" name="age" type="text" value="{{row['age']}}">
+    </div>
+    <br>
+    <label>Where do you live?</label><br>
+    <div class="input">
+        <input name="location" class="reg" type="text" maxlength="50" value="{{row['location']}}">
+    </div>
+    <br>
+    <label>Phone number:</label><br>
+    <div class="input">
+        <input name="phone" class="reg" type="text" value="{{row['phone']}}">
+    </div>
+    <br>
+    <label>Email:</label><br>
+    <div class="input">
+        <input name="email" class="reg" type="text" value="{{row['email']}}">
+    </div>
+    <br>
+    <label>Additional contact info:</label><br>
+    <div class="input">
+        <textarea rows="5" cols="60" class="reg" name="info"
+            type="text">{{row['info']}}</textarea>
+    </div>
+    <br>
+    <div class="input">
+        <button class="but" type="submit">Update Profile</button>
+    </div>
+    <br>
+    <br>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block style %}
+<style>
+    .profile-page {
+        margin-left: 25%;
+    }
+
+    h1.profile-name {
+        font-size: 30px;
+    }
+
+    h3.profile-name {
+        font-size: 23px;
+    }
+
+    .parent {
+        text-align: left;
+        line-height: 2;
+    }
+
+    hr {
+        border-top: 1px solid black;
+        margin-left: 150px;
+        margin-right: -50px;
+    }
+
+    .sub,
+    .ans {
+        display: inline;
+    }
+
+    .editProfile,
+    #logOut,
+    button.back,
+    #partnerUp {
+        height: 30px;
+        width: 100px;
+        margin-top: 15px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: white;
+        color: gray;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .editProfile:hover,
+    #logOut:hover,
+    button.back:hover,
+    #partnerUp:hover {
+        transform: scale(1.1);
+    }
+
+    #profilePart {
+        display: flex;
+    }
+
+    #nameEtc {
+        height: 500px;
+    }
+
+    h4.sub {
+        font-size: 17px;
+        width: 55%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    p.ans {
+        font-size: 15px;
+        width: 55%;
+        font-weight: 300;
+
+
+    }
+
+    .section {
+        margin-bottom: 15px;
+    }
+    .edit {
+        margin-left: 20px;
+    }
+    .img {
+        width:100%;
+    }
+    body, html {
+        height: 100%;
+        }
+
+        body {
+        /* The image used */
+        background-color:#EAE3ED
+        }
+    #about{
+        margin-left:50px;
+        margin-right:200px;
+    }
+    .first {
+        float: left;
+        left: 7%;
+    }
+
+    .second {
+        left: 21%;
+    }
+
+    .third {
+        left: 32.5%;
+    }
+    .forth {
+        left: 40%;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block body %}
+<div class="profile-page">
+    <div class="parent">
+        <br>
+        <div>
+            <div>
+                <form action="/browse" style="display:inline;font-size:larger;">
+                    <button class="first back" type="submit">
+                        &#8592 Back</button>
+                </form>
+                {% if yours %}
+                <form action="/updateProf2" method="post">
+                    <input type="hidden" name="row" value="{{row}}">
+                    <input class="second btn btn-primary" id="partnerUp" type="submit" name="button" value="Edit Profile">
+                </form>
+                <form action="/deleteAcc">
+                    <input class="third back" id="partnerUp" type="submit" value="Delete Account">
+                </form>
+                {% else %}
+                <form action="/friends" method="post">
+                    <input type="hidden" name="person_id" value="{{row['id']}}">
+                    <input class="fourth btn btn-primary" id="partnerUp" type="submit" name="button" value="Add Friend">
+                </form>
+                {% endif %}
+            </div>
+            <br>
+            <br>
+            <div id="profilePart">
+                <div id="nameEtc">
+                    <img class="img" src="/static/profile.jpg">
+                    <br>
+                    <br>
+                    <div class="section">
+                        <h4 class="sub orange interests">Race:</h4>
+                        <p class="ans">{{row["race"]}}</p>
+                        <br>
+                    </div>
+                    
+                    <div class="section">
+                        <h4 class="sub yellow interests">Age:</h4>
+                        <p class="ans">{{row["age"]}}</p>
+                        <br>
+                    </div>
+                    <div class="section">
+                        <h4 class="sub green skills">Location:</h4>
+                        <p class="ans">{{row["location"]}}</p>
+                        <br>
+                    </div>
+                    <div>
+                        <h4 class="sub blue phone">Phone #:</h4>
+                        <p class="ans">{{row["phone"]}}</p>
+                        <br>
+                    </div>
+                    <div>
+                        <h4 class="sub purple email">Email:</h4>
+                        <p class="ans">{{ row["email"] }}</p>
+                        <br>
+                    </div>
+                    {% if row["info"] != None %}
+                    <div>
+                        <h4 class="sub pink other">Additional Contact:</h4>
+                        <p class="ans">{{row["info"]}}</p>
+                        <br>
+                    </div>
+                    {% endif %}
+                </div>
+                <div id="about">
+                    <div>
+                        <h1 class="profile-name">{{row["name"]}}</h1>
+                        <h3 class="profile-name"><i>@{{ row["username"] }}</i></h3>
+                        <div class="section">
+                            <h4 class="sub red bio" id="bio">Bio:</h4>
+                            <p class="ans">{{row["bio"]}}</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+
+        {% endblock %}

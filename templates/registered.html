@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registered
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/registered2.png");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+    .text{
+        text-align: center;
+        width:40%;
+        background-color:white;
+        border-radius: 25px;
+        margin-left:30%;
+        padding:10px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <br><br><br><br>
+    <div class="text">
+        <h1><b>Congradulations!</b></h1>
+        <br><br>
+        <h3>You have registered for the {{group}}</h3>
+        <br>
+        <h3>We look forward to seeing you then!</h3>
+        <br>
+        <form action="/about">
+            <input class="first btn btn-primary" type="submit" name="button" value="Return to About Page">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Registered
+{% endblock %}
+
+{% block style %}
+<style>
+    body, html {
+        height: 100%;
+        }
+
+    body {
+        /* The image used */
+        background-image: url("/static/wallPost.jpeg");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+    .heading{
+        text-align:center;
+    }
+    .input{
+        text-align:center;
+    }
+    textarea{
+        width:60%;
+    }
+    .btn{
+        text-align:center;
+        border-color: black;
+        background-color:#F1ECEB
+    }
+    .btn:hover{
+        background-color:#DAD4D3
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <br><br><br>
+    <div class="heading">
+        <h1>Post a story</h1>
+        <h3>Share your personal experience with others...</h3>
+        <br><br>
+    </div>
+    <form action="/storyWallPost" method="post" class="input">
+        <textarea class="reg" rows="10" cols="60" name="story" style="text-align: left;"
+            placeholder="It can be ...
+    a time you were discriminated against
+    action to took to fight racial injustice
+    your accomplishments
+    your failures
+    just about anything!!"
+            type="text"></textarea>
+            <br><br>
+        <p style="color:white;">Not your own story, that's okay too, comment who it belongs to:</p>
+        <input type="text" placeholder="Name" name="username" class="reg">
+        <br><br><br>
+        <input class="btn" type="submit" name="button" value="Post a story">
+        <br><br><br><br>
+    </form>
+{% endblock %}

@@ -1,0 +1,80 @@
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+.logo{
+    width:50px;
+    height:50px;
+}
+
+h1.open{
+    text-align: left;
+    margin: 30px;
+    font-size:40px;
+    font-weight:400;
+    max-width:45%;
+    margin-top:63px;
+}
+
+h5.open{
+    text-align: left;
+    max-width: 45%;
+    margin: 28px;
+    font-size:25px;
+}
+h6.open{
+    text-align: left;
+    max-width: 40%;
+    margin: 28px;
+    font-size:24px;
+}
+p.open{
+    text-align: left;
+    max-width: 45%;
+    margin: 28px;
+    font-size:23px;
+}
+
+.openimg{
+    width:47%;
+    position:absolute;
+    top:40%;
+    left:54%;
+    transform: translate(-50px, -50px);
+}
+
+.red{
+    color: rgb(214, 54, 43);
+    background-color: rgb(254, 226, 219)
+}
+.purple{
+    color: rgb(102, 51, 204);
+    background-color: rgb(236, 228, 252);
+}
+
+.pink{
+    color: rgb(204, 20, 123);
+    background-color: rgb(255, 226, 242);
+}
+.green{
+    color: rgb(0, 138, 45);
+    background-color: rgb(219, 242, 226);
+}
+
+.yellow{
+    color: #FFD700;
+    background-color: rgb(255,255,224);
+}
+
+.orange{
+    color: rgb(255, 166, 0);
+    background-color: rgb(255, 236, 202);
+}
+.blue{
+    color: rgb(0, 106, 212);
+    background-color: rgb(219, 238, 255);
+}

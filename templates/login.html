@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/login.jpg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<link href="/static/sign_.css" rel="stylesheet">
+<form action="/login" class="register-form" method="post">
+    <br>
+    <br>
+    <br>
+    <div class="input">
+        <input class="reg" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="input">
+        <input class="reg" name="password" placeholder="Password" type="password">
+    </div>
+    <div class="input">
+        <button class="but" type="submit">Login</button>
+    </div>
+</form>
+{% endblock %}

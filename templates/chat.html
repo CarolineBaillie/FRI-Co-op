@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Q&A
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/registered2.png");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .text {
+        text-align: center;
+        width: 50%;
+        background-color: white;
+        border-radius: 25px;
+        margin-left: 25%;
+        padding: 50px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <link href="/static/friends.css" rel="stylesheet">
+    <br><br><br><br>
+    <div class="text">
+        <h1><b>Ask your questions!</b></h1>
+        <br>
+        <form class="ex" action="/chatbot" method="post" style="margin:auto;max-width:900px">
+            <div id="searchBar">
+                <input type="text" placeholder="Search.." name="input" class="search">
+                <button type="submit">Ask</button>
+            </div>
+        </form>
+    </div>
+    <br><br>
+    {% if answer != None %}
+        <div class="text">
+            <h1>Response:</h1>
+            <br>
+            {% for line in answer.split("#") %}
+                <p>{{line}}</p>
+            {% endfor %}
+            <br>
+            <p><i>Questions and answers taken from <u style="color:blue;">https://www.cnn.com/interactive/2020/us/racism-questions-answers/</u></i></p>
+        </div>
+    {% endif %}
+    <br><br><br><br>
+    
+{% endblock %}

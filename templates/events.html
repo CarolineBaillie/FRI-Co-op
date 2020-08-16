@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Events
+{% endblock %}
+
+{% block style %}
+    <style>
+        .text
+        {
+            display:inline;
+        }
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            /* The image used */
+            background-image: url("/static/events.jpeg");
+
+            /* Full height */
+            height: 100%;
+            margin: 0;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<link href="/static/friends.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br>
+<br>
+<form class="ex" action="/events" method="post" style="margin:auto;max-width:900px">
+    <div id="searchBar">
+        <input type="text" placeholder="Search.." name="search2" class="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+</form>
+<br>
+<br>
+<div class="row">
+    {% for row in rows %}
+    <div class="browse-friends">
+        <div class="mb-4 back">
+            <div class="card-body" style="overflow: hidden; max-height: 270px;">
+                <h3 class="card-title">{{ row["eventName"] }}</h3>
+                <br>
+                <h6 class="card-text des pink">What:</h6>
+                <p> {{ row["description"] }}</p>
+                <h6 class="card-text des red">When:</h6><br>
+                <br>
+                <div style="padding-left: 30px;">
+                    <h7 class="text">Date:</h7>
+                    <p class="text"> {{ row["date"] }}</p>
+                    <br><br>
+                    <h7 class="text">Time:</h7>
+                    <p class="text"> {{ row["time"] }}</p>
+                </div>
+                <br>
+                <h6 class="card-text des orange">Where:</h6>
+                <p> {{ row["location"] }}</p>
+                <form action="/eventsPage" method="post">
+                    <input type="hidden" name="row" value="{{ row }}">
+                    <input class="first btn btn-primary" type="submit" value="Learn More">
+                </form>
+                <form action="/registered" method="post">
+                    <input type="hidden" name="group" value="{{row['eventName']}}">
+                    <input class="second btn btn-primary" type="submit" name="button" value="Register">
+                </form>
+                {% if session.user_id == row["id"] %}
+                <form action="/removeEvents" method="post">
+                    <input type="hidden" name="desc" value="{{row['description']}}">
+                    <input class="third btn btn-primary" type="submit" name="button" value="Remove Event">
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

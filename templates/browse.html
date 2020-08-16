@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Browse
+{% endblock %}
+
+{% block style %}
+    <style>
+        body, html {
+        height: 100%;
+        }
+
+        body {
+        /* The image used */
+        background-image: url("/static/browse.jpeg");
+
+        /* Full height */
+        height: 100%;
+        margin:0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width:100vw;
+        height: 100vh; 
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="/static/friends.css" rel="stylesheet">
+<br>
+<br>
+<form class="ex" action="/browse" method="post" style="margin:auto;max-width:900px">
+    <div id="searchBar">
+        <input type="text" placeholder="Search.." name="search2" class="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+</form>
+<br>
+<br>
+<div class="row">
+    {% for row in rows %}
+    <div class="browse-friends">
+        <div class="mb-4 back">
+            <div class="card-body" style="overflow: hidden; max-height: 270px;">
+                <h4 class="card-title">
+                    <h1>{{ row["username"] }}</h1>
+                </h4>
+                <h5 class="card-title">
+                    <h3>{{ row["name"] }}</h3>
+                </h5>
+                <br>
+                <h6 class="card-text des blue">Bio:</h6>
+                <p> {{ row["bio"] }}</p>
+                <h6 class="card-text des purple">Age:</h6>
+                <p> {{ row["age"] }}</p>
+                <h6 class="card-text des pink">Location:</h6>
+                <p> {{ row["location"] }}</p>
+                <h6 class="card-text des red">Phone #:</h6>
+                <p> {{ row["phone"] }}</p>
+                <form action="/profile" method="post">
+                    <input type="hidden" name="person_id" value="{{row['id']}}">
+                    <input class="first btn btn-primary" type="submit" name="button" value="Visit Profile">
+                </form>
+                <form action="/friends" method="post">
+                    <input type="hidden" name="person_id" value="{{row['id']}}">
+                    <input class="second btn btn-primary" id="partnerUp" type="submit" name="button" value="Add Friend">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

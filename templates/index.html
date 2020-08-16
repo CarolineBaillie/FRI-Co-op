@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome!
+{% endblock %}
+
+{% block style %}
+    <style>
+        body, html {
+        height: 100%;
+        }
+
+        body {
+        /* The image used */
+        background-image: url("/static/home1.jpg");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        .content{
+            background-color:black;
+            height:50%;
+            width:50%;
+            margin-left:25%;
+            text-align:center;
+            border-radius: 25px;
+        }
+        .text{
+            width:80%;
+            margin-left:10%;
+            font-size: xx-large;
+            color:white;
+        }
+        .start {
+            height: 50px;
+            width: 200px;
+            margin-top: 15px;
+            border: 1px solid black;
+            border-radius: 4px;
+            background-color: white;
+            color: gray;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .start:hover {
+            transform: scale(1.1);
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<br><br><br><br>
+    <div class="content">
+        <br><br><br>
+        <p class="text">Welcome to FRI Co-op! We hope your ready to learn, talk, and take action. Register or login to get started!</p>
+        <form action="/start">
+            <input class="start btn btn-primary" type="submit" value="Get Started">
+        </form>
+    </div>
+{% endblock %}

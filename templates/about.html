@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/about.jpeg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <h1 class="open">FRI Co-op</h1>
+    <h5 class="open">
+        Do you want to talk to others of the same race in a safe and comfortable space?
+        <br>
+        Do you want to learn what you can do to help fight racism as a white ally?
+        <br>
+        Do you want to take action against racial injustice?
+    </h5>
+    <h6 class="open">Turns out your not alone...</h6>
+    <p class="open">
+        As citizens, we have acknowledged peoples desire for these 3 things. That's why we created FRI Co-op (Fighting Racial Injustice Co-operative), a website committed to racial education, communication, and action. Through FRI Co-op we lead weekly affinity space meetings as well as provide access to many other resources and events.
+    </p>
+    <img class="openimg" src="/static/justice.jpeg">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="text-align:center;font-size: 500;">Meet the Team:</h1>
+    <br>
+    <br>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3" style="width:60%;text-align:center;margin-left:20%;">
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="/static/profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Jenny Ethern</h5>
+                    <p class="card-text">Black affinity space leader...</p>
+                    <p class="card-text"><small class="text-muted">jenny@gmail.com</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="/static/profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Katie Li</h5>
+                    <p class="card-text">Asian affinity space leader...</p>
+                    <p class="card-text"><small class="text-muted">katie@gmail.com</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="/static/profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tony Grod</h5>
+                    <p class="card-text">Indigenous affinity space leader...</p>
+                    <p class="card-text"><small class="text-muted">tony@gmail.com</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3" style="width:80%;text-align:center;margin-left:10%;">
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="/static/profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Melissa Bruff</h5>
+                    <p class="card-text">White affinity space leader...</p>
+                    <p class="card-text"><small class="text-muted">melissa@gmail.com</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="/static/profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Juan Betto</h5>
+                    <p class="card-text">Latinx affinity space leader...</p>
+                    <p class="card-text"><small class="text-muted">juan@gmail.com</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="/static/profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mason Simmons</h5>
+                    <p class="card-text">Pasific Islander affinity space leader...</p>
+                    <p class="card-text"><small class="text-muted">mason@gmail.com</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="/static/profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vini Jackson</h5>
+                    <p class="card-text">Multiracial affinity space leader...</p>
+                    <p class="card-text"><small class="text-muted">vini@gmail.com</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

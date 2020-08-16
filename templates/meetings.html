@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meetings
+{% endblock %}
+
+{% block style %}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("/static/meetings.jpeg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    /* Float four columns side by side */
+    .column {
+        width: 45%;
+        padding: 0 10px;
+        padding-right:50px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 800px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+    h1, h3{
+        text-align: center;
+    }
+    .heading{
+        background-color: white;
+        width:50%;
+        margin-left:24.5%;
+        border-radius: 25px;
+        padding:10px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <br><br>
+    <div class="heading">
+        <h1><u>Up Coming Affinity Space Meetings:</u></h1>
+        <br>
+        <h3>Weekly Theme: COVID-19</h3>
+    </div>
+    <br><br><br>
+    <div style="margin-left:10%;">
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Black Affinity Space</h3>
+                    <p><i>Link: <a href="https://zoom.com" target="_blank">https://zoom.us/JennyEthern/5551112222</a></i></p>
+                    <p>This affinity space provides a safe environment for us to talk and share our experiences. This weeks theme is COVID-19 and we will discuss how the economic downturn is disproportionatly affecting people of color and other minorities.</p>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="Black Affinity Space">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                </div>
+            </div>
+        
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Asian Affinity Space</h3>
+                    <p><i>Link: <a href="https://zoom.com" target="_blank">https://zoom.us/KatieLi/5551112222</a></i></p>
+                    <p>This affinity space provides a safe environment for us to talk and share our experiences. This weeks theme is COVID-19. We will discuss how the Novel Coronavirus is fueling anti-Asian racism. We will have to time to discuss our personal feelings and experiences as well as the broader picturer and what we can do to combat the racism.</p>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="Asian Affinity Space">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Indigenous Affinity Space</h3>
+                    <p><i>Link: <a href="https://zoom.com" target="_blank">https://zoom.us/TonyGrod/5551112222</a></i></p>
+                    <p>This affinity space provides a safe environment for us to talk and share our experiences. This weeks theme is COVID-19.
+                    We will discuss how during this time Indigenous peoples are disproportionatly at risk in public health emergencies. We will share personal feelings as well as provide resources to combat this inequality.</p>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="Indigenous Affinity Space">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                </div>
+            </div>
+        
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Pacific Islander Affinity Space</h3>
+                    <p><i>Link: <a href="https://zoom.com" target="_blank">https://zoom.us/MasonSimmons/5551112222</a></i></p>
+                    <p>This affinity space provides a safe environment for us to talk and share our experiences. This weeks theme is COVID-19.
+                    We will discuss how Pacific Islanders are disproportionatly impacted by the virus.</p>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="Pacific Islander Affinity Space">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="column">
+                <div class="card h-100">
+                    <h3>White Affinity Space</h3>
+                    <p><i>Link: <a href="https://zoom.com" target="_blank">https://zoom.us/MelissaBruff/5551112222</a></i></p>
+                    <p>This affinity space provides a safe environment for us to talk and share our experiences, but more importantly learn what we can do to help. This weeks theme is COVID-19.
+                    We will discuss how, as white Americans, we are privileged. We will take time to learn about the inequalities during COVID-19 and what we can do to help and support those who are disproportionatly affected</p>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="White Affinity Space">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                </div>
+            </div>
+        
+            <div class="column">
+                <div class="card h-100">
+                    <h3>Latinx Affinity Space</h3>
+                    <p><i>Link: <a href="https://zoom.com" target="_blank">https://zoom.us/JuanBetto/5551112222</a></i></p>
+                    <p>This affinity space provides a safe environment for us to talk and share our experiences. This weeks theme is COVID-19.
+                    We will discuss how Hispanic Peoples are disproportionatly burdened by COVID-19 and it's health and finance risks.</p>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="Latinx Affinity Space">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row" style="margin-left:20%;">
+            <div class="column" style="width:62.5%;">
+                <div class="card">
+                    <h3>Multiracial Affinity Space</h3>
+                    <p><i>Link: <a href="https://zoom.com" target="_blank">https://zoom.us/ViniJackson/5551112222</a></i></p>
+                    <p>This affinity space provides a safe environment for us to talk and share our experiences. This weeks theme is COVID-19.
+                    We will discuss our unique perspective and experiences as multiracial Americans and inconsistencies of reported cases on minority groups.</p>
+                    <form action="/registered" method="post">
+                        <input type="hidden" name="group" value="Multiracial Affinity Space">
+                        <input class="first btn btn-primary" type="submit" name="button" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+{% endblock %}

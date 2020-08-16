@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block style %}
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        /* The image used */
+        background-image: url("/static/register.jpeg");
+
+        /* Full height */
+        height: 100%;
+        margin: 0;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<link href="/static/sign_.css" rel="stylesheet">
+<form action="/register" method="post">
+    <br>
+    <br>
+    <h1><u>Account:</u></h1>
+    <br>
+    <div class="input">
+        <input class="reg" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="input">
+        <input class="reg" name="password" placeholder="Password" type="password">
+    </div>
+    <div class="input">
+        <input class="reg" name="confirmation" placeholder="Confirm Password" type="password">
+    </div>
+    <br>
+    <h1><u>Profile:</u></h1>
+    <br>
+    <br>
+    <label>Your Name:</label>
+    <div class="input">
+        <br>
+        <input class="reg" rows="5" cols="60" name="name" style="text-align: left;" placeholder="Jane Doe" type="name">
+    </div>
+    <br>
+    <label>Summary/bio:</label>
+    <div class="input">
+        <br>
+        <textarea class="reg" rows="5" cols="60" name="bio" style="text-align: left;"
+            placeholder="I am a college Junior committed to social justice. I am the co-founder and co-head of my university's Racial Initative For POC in STEM, in which we look to provide education, opportunities, and equality for POC in the fields of STEM. I am constantly looking for ways to make a change and discuss with others!"
+            type="text"></textarea>
+    </div>
+    <br>
+    <label>Race:</label><br><br>
+    <div class="sel">
+        <select id="race" name="race">
+            <option value="black">Black/African American</option>
+            <option value="asian">Asian</option>
+            <option value="native">American Indian/Alaska Native</option>
+            <option value="hispanic">Hispanic or Latinx</option>
+            <option value="pacific">Native Hawaiian/other Pacific Islander</option>
+            <option value="multiracial">Multiracial</option>
+            <option value="white">White</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <br>
+    <br>
+    <label>Your age:</label><br>
+    <div class="input">
+        <input class="reg" name="age" placeholder="21" type="text">
+    </div>
+    <br>
+    <label>Host:</label>
+    <div class="input">
+        <br>
+        <div style="white-space: nowrap;">
+            <input type="checkbox" id="host" name="host" value="host">
+        </div>
+    </div>
+    <label>Where do you live?</label>
+    <div class="input">
+        <br>
+        <input name="location" class="reg" placeholder="San Fransico, CA" type="text" maxlength="50">
+    </div>
+    <br>
+    <label>Phone number:</label>
+    <div class="input">
+        <br>
+        <input name="phone" class="reg" placeholder="415-888-9574" type="text">
+    </div>
+    <br>
+    <label>Email:</label>
+    <div class="input">
+        <br>
+        <input name="email" class="reg" placeholder="janedoe@gmail.com" type="text">
+    </div>
+    <br>
+    <label>Additional contact info:</label>
+    <div class="input">
+        <br>
+        <textarea rows="5" cols="60" class="reg" name="info"
+            placeholder="Personal website: www.janedoe.com" type="text"></textarea>
+    </div>
+    <br>
+    <div class="input">
+        <button class="but" type="submit">Finish Profile</button>
+    </div>
+    <br>
+    <br>
+    </div>
+</form>
+
+{% endblock %}
